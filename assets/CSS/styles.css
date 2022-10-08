@@ -4,3 +4,32 @@ color: white;
 text-align: center;
 padding: 30px;
 }
+
+.container {
+margin: 1.2em auto;
+}
+
+.city-today {
+border: 1px solid black;
+height: 40%;
+}
+
+.five-day-forecast {
+border: 1px solid black;
+height: 60%;
+}
+
+button {
+list-style-type: none;
+text-align: center;
+background-color: #c0c0c0;
+padding: .9rem;
+font-size: 22px;
+font-weight: normal;
+border-radius: 5px;
+width: 100%;
+}
+
+.citybtn {
+margin: 10px auto;
+}
