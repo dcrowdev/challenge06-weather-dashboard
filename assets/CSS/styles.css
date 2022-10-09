@@ -1,5 +1,5 @@
 header {
-background-color: blueviolet;
+background-color: rgb(86, 42, 207);
 color: white;
 text-align: center;
 padding: 30px;
@@ -16,7 +16,7 @@ height: 40%;
 
 .five-day-forecast {
 border: 1px solid black;
-height: 80%;
+height: 60%;
 }
 
 button {
@@ -39,9 +39,10 @@ height: auto;
 width: auto;
 }
 
-#city-icon-wrapper {
+.city-icon-wrappers {
 display: flex;
 align-items: center;
+flex-wrap: wrap;
 }
 
 #five-day-header {
@@ -50,4 +51,20 @@ height: 20%;
 
 #five-day-container {
 height: 80%;
+flex-direction: column;
+}
+
+.day-containers {
+border: 1px solid black;
+margin: 2% auto;
+background-color: rgb(18, 18, 53);
+color: white;
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+flex-wrap: wrap;
+}
+
+span {
+font-weight: bold;
 }

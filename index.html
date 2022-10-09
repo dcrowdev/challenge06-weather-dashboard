@@ -15,7 +15,7 @@
         <h1>Weather Dashboard</h1>
     </header>
     <div class="container mw-100 vh-100">
-        <div class="row h-75">
+        <div class="row h-75 justify-content-center">
             <div class="col-12 col-md-3" id="appendCity">
                 <form>
                     <div class="mb-3">
@@ -26,9 +26,9 @@
                     <hr>
                 </form>
             </div>
-            <div class="col-12 col-md-9 h-100">
+            <div class="col-12 col-xl-9 h-100">
                 <div class="row city-today">
-                  <div id="city-icon-wrapper">
+                  <div class="city-icon-wrappers">
                     <h2 id="cityHeader"></h2>
                     <img id="icon">
                   </div>
@@ -38,35 +38,50 @@
                     <span id="lat" style="display: none"></span>
                     <span id="lon" style="display: none"></span>
                 </div>
-                <div class="row five-day-forecast">
+                <div class="row five-day-forecast invisible">
                     <h2 class="invisible" id="five-day-header">5-Day-Forecast</h2>
-                 <div id="five-day-container row">
-                    <div id="day-one-container col-12 col-md-2" style="border: 1px solid black">
+                 <div id="five-day-container" class="row flex-row justify-content-between">
+                    <div id="day-one-container" class= "col-12 col-md-2 day-containers">
+                      <div class="city-icon-wrappers">
                         <h3 id="day-one-header"></h3>
+                        <img id="day-one-icon">
+                      </div>
                         <span class="invisible">Temp: <span id="day-one-temp"></span>°F</span>
                         <span class="invisible">Wind: <span id="day-one-wind"></span>MPH</span>
                         <span class="invisible">Humidity: <span id="day-one-humidity"></span>%</span>
                     </div>
-                     <div id="day-two-container col-12 col-md-2">
+                     <div id="day-two-container" class="col-12 col-md-2 day-containers">
+                      <div class="city-icon-wrappers">
                         <h3 id="day-two-header"></h3>
+                        <img id="day-two-icon">
+                      </div>
                         <span class="invisible">Temp: <span id="day-two-temp"></span>°F</span>
                         <span class="invisible">Wind: <span id="day-two-wind"></span>MPH</span>
                         <span class="invisible">Humidity: <span id="day-two-humidity"></span>%</span>
                     </div>
-                     <div id="day-three-container col-12 col-md-2">
+                     <div id="day-three-container" class="col-12 col-md-2 day-containers">
+                      <div class="city-icon-wrappers">
                         <h3 id="day-three-header"></h3>
+                        <img id="day-three-icon">
+                      </div>
                         <span class="invisible">Temp: <span id="day-three-temp"></span>°F</span>
                         <span class="invisible">Wind: <span id="day-three-wind"></span>MPH</span>
                         <span class="invisible">Humidity: <span id="day-three-humidity"></span>%</span>
                     </div>
-                     <div id="day-four-container col-12 col-md-2">
+                     <div id="day-four-container" class="col-12 col-md-2 day-containers">
+                      <div class="city-icon-wrappers">
                         <h3 id="day-four-header"></h3>
+                        <img id="day-four-icon">
+                      </div>
                         <span class="invisible">Temp: <span id="day-four-temp"></span>°F</span>
                         <span class="invisible">Wind: <span id="day-four-wind"></span>MPH</span>
                         <span class="invisible">Humidity: <span id="day-four-humidity"></span>%</span>
                     </div>
-                     <div id="day-five-container col-12 col-md-2">
+                     <div id="day-five-container" class= "col-12 col-md-2 day-containers">
+                      <div class="city-icon-wrappers">
                         <h3 id="day-five-header"></h3>
+                        <img id="day-five-icon">
+                      </div>
                         <span class="invisible">Temp: <span id="day-five-temp"></span>°F</span>
                         <span class="invisible">Wind: <span id="day-five-wind"></span>MPH</span>
                         <span class="invisible">Humidity: <span id="day-five-humidity"></span>%</span>
@@ -87,7 +102,7 @@
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="./assets/JS/script.js"></script>

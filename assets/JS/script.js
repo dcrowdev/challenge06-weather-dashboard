@@ -17,14 +17,16 @@ event.preventDefault();
             .then(response => response.json())
             .then(data => {
               var arr = [];
-                arr.push(data)
+                arr.push(data);
+              var date = arr[0].dt;
+              var formattedDate = moment.unix(date).format('MM/DD/YYYY');
               var cityName = arr[0].name;
               var temp = arr[0].main.temp;
               var wind = arr[0].wind.speed;
               var humidity = arr[0].main.humidity;
               var icon = arr[0].weather[0].icon;
               $('.invisible').removeClass('invisible')
-              $('#cityHeader').text(cityName);
+              $('#cityHeader').text(cityName + ' ' + formattedDate);
               $('#temp').text(temp);
               $('#wind').text(wind);
               $('#humidity').text(humidity);
@@ -35,47 +37,61 @@ event.preventDefault();
               $('#five-day-header').removeClass('invisible');
               var arr2 = [];
               arr2.push(data);
-              console.log(arr2)
-              var dayOneDate = Date(arr2[0].list[6].dt_text);
+              var dayOneDate = arr2[0].list[6].dt;
+              var formattedDayOneDate = moment.unix(dayOneDate).format('MM/DD/YYYY');
               var dayOneTemp = arr2[0].list[6].main.temp;
               var dayOneWind = arr2[0].list[6].wind.speed;
               var dayOneHumidity = arr2[0].list[6].main.humidity;
-              $('#day-one-header').text(dayOneDate);
+              var dayOneIcon = arr2[0].list[6].weather[0].icon;
+              $('#day-one-header').text(formattedDayOneDate);
               $('#day-one-temp').text(dayOneTemp);
               $('#day-one-wind').text(dayOneWind);
               $('#day-one-humidity').text(dayOneHumidity);
-              var dayTwoDate = Date(arr2[0].list[14].dt_text);
+              $('#day-one-icon').attr('src', "http://openweathermap.org/img/wn/" + dayOneIcon + ".png")
+              var dayTwoDate = arr2[0].list[14].dt;
+              var formattedDayTwoDate = moment.unix(dayTwoDate).format('MM/DD/YYYY');
               var dayTwoTemp = arr2[0].list[14].main.temp;
               var dayTwoWind = arr2[0].list[14].wind.speed;
               var dayTwoHumidity = arr2[0].list[14].main.humidity;
-              $('#day-two-header').text(dayTwoDate);
+              var dayTwoIcon = arr2[0].list[14].weather[0].icon;
+              $('#day-two-header').text(formattedDayTwoDate);
               $('#day-two-temp').text(dayTwoTemp);
               $('#day-two-wind').text(dayTwoWind);
               $('#day-two-humidity').text(dayTwoHumidity);
-              var dayThreeDate = Date(arr2[0].list[22].dt_text);
+              $('#day-two-icon').attr('src', "http://openweathermap.org/img/wn/" + dayTwoIcon + ".png")
+              var dayThreeDate = arr2[0].list[22].dt;
+              var formattedDayThreeDate = moment.unix(dayThreeDate).format('MM/DD/YYYY');
               var dayThreeTemp = arr2[0].list[22].main.temp;
               var dayThreeWind = arr2[0].list[22].wind.speed;
               var dayThreeHumidity = arr2[0].list[22].main.humidity;
-              $('#day-three-header').text(dayThreeDate);
+              var dayThreeIcon = arr2[0].list[22].weather[0].icon;
+              $('#day-three-header').text(formattedDayThreeDate);
               $('#day-three-temp').text(dayThreeTemp);
               $('#day-three-wind').text(dayThreeWind);
               $('#day-three-humidity').text(dayThreeHumidity);
-              var dayFourDate = Date(arr2[0].list[30].dt_text);
+              $('#day-three-icon').attr('src', "http://openweathermap.org/img/wn/" + dayThreeIcon + ".png")
+              var dayFourDate = arr2[0].list[30].dt;
+              var formattedDayFourDate = moment.unix(dayFourDate).format('MM/DD/YYYY');
               var dayFourTemp = arr2[0].list[30].main.temp;
               var dayFourWind = arr2[0].list[30].wind.speed;
               var dayFourHumidity = arr2[0].list[30].main.humidity;
-              $('#day-four-header').text(dayFourDate);
+              var dayFourIcon = arr2[0].list[30].weather[0].icon;
+              $('#day-four-header').text(formattedDayFourDate);
               $('#day-four-temp').text(dayFourTemp);
               $('#day-four-wind').text(dayFourWind);
               $('#day-four-humidity').text(dayFourHumidity);
-              var dayFiveDate = Date(arr2[0].list[38].dt_text);
+              $('#day-four-icon').attr('src', "http://openweathermap.org/img/wn/" + dayFourIcon + ".png")
+              var dayFiveDate = arr2[0].list[38].dt;
+              var formattedDayFiveDate = moment.unix(dayFiveDate).format('MM/DD/YYYY');
               var dayFiveTemp = arr2[0].list[38].main.temp;
               var dayFiveWind = arr2[0].list[38].wind.speed;
               var dayFiveHumidity = arr2[0].list[38].main.humidity;
-              $('#day-five-header').text(dayFiveDate);
+              var dayFiveIcon = arr2[0].list[38].weather[0].icon;
+              $('#day-five-header').text(formattedDayFiveDate);
               $('#day-five-temp').text(dayFiveTemp);
               $('#day-five-wind').text(dayFiveWind);
               $('#day-five-humidity').text(dayFiveHumidity);
+              $('#day-five-icon').attr('src', "http://openweathermap.org/img/wn/" + dayFiveIcon + ".png")
               })
             });
         });
@@ -85,10 +101,103 @@ event.preventDefault();
 })
 
 
-$(document).on('click', '.citybtn', function() {
-var btnText = $(this).text();
-console.log(btnText);
-})
+$(document).on('click', '.cityBtn', function () {
+$('#searchBtn').val() = $('.cityBtn').val(); console.log($('.cityBtn').val())
+fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + $('#cityInput').val() + '&appid=a32ee3008dc5ad65e11f2b980a7a6054')
+            .then(response => response.json())
+            .then(data => {
+              var lat = data[0].lat;
+              var lon = data[0].lon;
+              $('#lat').text(lat);
+              $('#lon').text(lon);
+        fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=a32ee3008dc5ad65e11f2b980a7a6054')
+            .then(response => response.json())
+            .then(data => {
+              var arr = [];
+                arr.push(data);
+              var date = arr[0].dt;
+              var formattedDate = moment.unix(date).format('MM/DD/YYYY');
+              var cityName = arr[0].name;
+              var temp = arr[0].main.temp;
+              var wind = arr[0].wind.speed;
+              var humidity = arr[0].main.humidity;
+              var icon = arr[0].weather[0].icon;
+              $('.invisible').removeClass('invisible')
+              $('#cityHeader').text(cityName + ' ' + formattedDate);
+              $('#temp').text(temp);
+              $('#wind').text(wind);
+              $('#humidity').text(humidity);
+              $('#icon').attr('src', "http://openweathermap.org/img/wn/" + icon + ".png");
+        fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=a32ee3008dc5ad65e11f2b980a7a6054')
+            .then(response => response.json())
+            .then(data => {
+              $('#five-day-header').removeClass('invisible');
+              var arr2 = [];
+              arr2.push(data);
+              var dayOneDate = arr2[0].list[6].dt;
+              var formattedDayOneDate = moment.unix(dayOneDate).format('MM/DD/YYYY');
+              var dayOneTemp = arr2[0].list[6].main.temp;
+              var dayOneWind = arr2[0].list[6].wind.speed;
+              var dayOneHumidity = arr2[0].list[6].main.humidity;
+              var dayOneIcon = arr2[0].list[6].weather[0].icon;
+              $('#day-one-header').text(formattedDayOneDate);
+              $('#day-one-temp').text(dayOneTemp);
+              $('#day-one-wind').text(dayOneWind);
+              $('#day-one-humidity').text(dayOneHumidity);
+              $('#day-one-icon').attr('src', "http://openweathermap.org/img/wn/" + dayOneIcon + ".png")
+              var dayTwoDate = arr2[0].list[14].dt;
+              var formattedDayTwoDate = moment.unix(dayTwoDate).format('MM/DD/YYYY');
+              var dayTwoTemp = arr2[0].list[14].main.temp;
+              var dayTwoWind = arr2[0].list[14].wind.speed;
+              var dayTwoHumidity = arr2[0].list[14].main.humidity;
+              var dayTwoIcon = arr2[0].list[14].weather[0].icon;
+              $('#day-two-header').text(formattedDayTwoDate);
+              $('#day-two-temp').text(dayTwoTemp);
+              $('#day-two-wind').text(dayTwoWind);
+              $('#day-two-humidity').text(dayTwoHumidity);
+              $('#day-two-icon').attr('src', "http://openweathermap.org/img/wn/" + dayTwoIcon + ".png")
+              var dayThreeDate = arr2[0].list[22].dt;
+              var formattedDayThreeDate = moment.unix(dayThreeDate).format('MM/DD/YYYY');
+              var dayThreeTemp = arr2[0].list[22].main.temp;
+              var dayThreeWind = arr2[0].list[22].wind.speed;
+              var dayThreeHumidity = arr2[0].list[22].main.humidity;
+              var dayThreeIcon = arr2[0].list[22].weather[0].icon;
+              $('#day-three-header').text(formattedDayThreeDate);
+              $('#day-three-temp').text(dayThreeTemp);
+              $('#day-three-wind').text(dayThreeWind);
+              $('#day-three-humidity').text(dayThreeHumidity);
+              $('#day-three-icon').attr('src', "http://openweathermap.org/img/wn/" + dayThreeIcon + ".png")
+              var dayFourDate = arr2[0].list[30].dt;
+              var formattedDayFourDate = moment.unix(dayFourDate).format('MM/DD/YYYY');
+              var dayFourTemp = arr2[0].list[30].main.temp;
+              var dayFourWind = arr2[0].list[30].wind.speed;
+              var dayFourHumidity = arr2[0].list[30].main.humidity;
+              var dayFourIcon = arr2[0].list[30].weather[0].icon;
+              $('#day-four-header').text(formattedDayFourDate);
+              $('#day-four-temp').text(dayFourTemp);
+              $('#day-four-wind').text(dayFourWind);
+              $('#day-four-humidity').text(dayFourHumidity);
+              $('#day-four-icon').attr('src', "http://openweathermap.org/img/wn/" + dayFourIcon + ".png")
+              var dayFiveDate = arr2[0].list[38].dt;
+              var formattedDayFiveDate = moment.unix(dayFiveDate).format('MM/DD/YYYY');
+              var dayFiveTemp = arr2[0].list[38].main.temp;
+              var dayFiveWind = arr2[0].list[38].wind.speed;
+              var dayFiveHumidity = arr2[0].list[38].main.humidity;
+              var dayFiveIcon = arr2[0].list[38].weather[0].icon;
+              $('#day-five-header').text(formattedDayFiveDate);
+              $('#day-five-temp').text(dayFiveTemp);
+              $('#day-five-wind').text(dayFiveWind);
+              $('#day-five-humidity').text(dayFiveHumidity);
+              $('#day-five-icon').attr('src', "http://openweathermap.org/img/wn/" + dayFiveIcon + ".png")
+              })
+            });
+        });
+        $('#cityInput').val('');
+        $('#cityHeader').text($(this)[0].name);
+});
+
+
+
 
 
     
