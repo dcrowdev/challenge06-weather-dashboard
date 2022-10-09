@@ -16,7 +16,7 @@ height: 40%;
 
 .five-day-forecast {
 border: 1px solid black;
-height: 60%;
+height: 80%;
 }
 
 button {
@@ -32,4 +32,22 @@ width: 100%;
 
 .citybtn {
 margin: 10px auto;
+}
+
+#icon {
+height: auto;
+width: auto;
+}
+
+#city-icon-wrapper {
+display: flex;
+align-items: center;
+}
+
+#five-day-header {
+height: 20%;
+}
+
+#five-day-container {
+height: 80%;
 }

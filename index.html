@@ -28,7 +28,10 @@
             </div>
             <div class="col-12 col-md-9 h-100">
                 <div class="row city-today">
-                    <h2 id="cityHeader"><i id="icon"></h2>
+                  <div id="city-icon-wrapper">
+                    <h2 id="cityHeader"></h2>
+                    <img id="icon">
+                  </div>
                     <span class="invisible" id="tempSpan">Temp: <span id="temp"></span>°F</span>
                     <span class="invisible" id="windSpan">Wind: <span id="wind"></span>MPH</span>
                     <span class="invisible" id="humiditySpan">Humidity: <span id="humidity"></span>%</span>
@@ -36,7 +39,39 @@
                     <span id="lon" style="display: none"></span>
                 </div>
                 <div class="row five-day-forecast">
-                    <h2 class="invisible">5-Day-Forecast</h2>
+                    <h2 class="invisible" id="five-day-header">5-Day-Forecast</h2>
+                 <div id="five-day-container row">
+                    <div id="day-one-container col-12 col-md-2" style="border: 1px solid black">
+                        <h3 id="day-one-header"></h3>
+                        <span class="invisible">Temp: <span id="day-one-temp"></span>°F</span>
+                        <span class="invisible">Wind: <span id="day-one-wind"></span>MPH</span>
+                        <span class="invisible">Humidity: <span id="day-one-humidity"></span>%</span>
+                    </div>
+                     <div id="day-two-container col-12 col-md-2">
+                        <h3 id="day-two-header"></h3>
+                        <span class="invisible">Temp: <span id="day-two-temp"></span>°F</span>
+                        <span class="invisible">Wind: <span id="day-two-wind"></span>MPH</span>
+                        <span class="invisible">Humidity: <span id="day-two-humidity"></span>%</span>
+                    </div>
+                     <div id="day-three-container col-12 col-md-2">
+                        <h3 id="day-three-header"></h3>
+                        <span class="invisible">Temp: <span id="day-three-temp"></span>°F</span>
+                        <span class="invisible">Wind: <span id="day-three-wind"></span>MPH</span>
+                        <span class="invisible">Humidity: <span id="day-three-humidity"></span>%</span>
+                    </div>
+                     <div id="day-four-container col-12 col-md-2">
+                        <h3 id="day-four-header"></h3>
+                        <span class="invisible">Temp: <span id="day-four-temp"></span>°F</span>
+                        <span class="invisible">Wind: <span id="day-four-wind"></span>MPH</span>
+                        <span class="invisible">Humidity: <span id="day-four-humidity"></span>%</span>
+                    </div>
+                     <div id="day-five-container col-12 col-md-2">
+                        <h3 id="day-five-header"></h3>
+                        <span class="invisible">Temp: <span id="day-five-temp"></span>°F</span>
+                        <span class="invisible">Wind: <span id="day-five-wind"></span>MPH</span>
+                        <span class="invisible">Humidity: <span id="day-five-humidity"></span>%</span>
+                    </div>
+                 </div>
                 </div>
             
             </div>
