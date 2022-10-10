@@ -1,70 +1,70 @@
 header {
-background-color: rgb(86, 42, 207);
-color: white;
-text-align: center;
-padding: 30px;
+    background-color: rgb(86, 42, 207);
+    color: white;
+    text-align: center;
+    padding: 30px;
 }
 
 .container {
-margin: 1.2em auto;
+    margin: 1.2em auto;
 }
 
 .city-today {
-border: 1px solid black;
-height: 40%;
+    border: 1px solid black;
+    height: 40%;
 }
 
 .five-day-forecast {
-border: 1px solid black;
-height: 60%;
+    border: 1px solid black;
+    height: 60%;
 }
 
 button {
-list-style-type: none;
-text-align: center;
-background-color: #c0c0c0;
-padding: .9rem;
-font-size: 22px;
-font-weight: normal;
-border-radius: 5px;
-width: 100%;
+    list-style-type: none;
+    text-align: center;
+    background-color: #c0c0c0;
+    padding: .9rem;
+    font-size: 22px;
+    font-weight: normal;
+    border-radius: 5px;
+    width: 100%;
 }
 
 .citybtn {
-margin: 10px auto;
+    margin: 10px auto;
 }
 
 #icon {
-height: auto;
-width: auto;
+    height: auto;
+    width: auto;
 }
 
 .city-icon-wrappers {
-display: flex;
-align-items: center;
-flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #five-day-header {
-height: 20%;
+    height: 20%;
 }
 
 #five-day-container {
-height: 80%;
-flex-direction: column;
+    height: 80%;
+    flex-direction: column;
 }
 
 .day-containers {
-border: 1px solid black;
-margin: 2% auto;
-background-color: rgb(18, 18, 53);
-color: white;
-display: flex;
-justify-content: flex-start;
-align-items: flex-start;
-flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 2% auto;
+    background-color: rgb(18, 18, 53);
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 span {
-font-weight: bold;
+    font-weight: bold;
 }
