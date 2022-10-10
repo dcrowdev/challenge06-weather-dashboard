@@ -101,9 +101,8 @@ event.preventDefault();
 })
 
 
-$(document).on('click', '.cityBtn', function () {
-$('#searchBtn').val() = $('.cityBtn').val(); console.log($('.cityBtn').val())
-fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + $('#cityInput').val() + '&appid=a32ee3008dc5ad65e11f2b980a7a6054')
+$(document).on('click', '.citybtn', function () {
+fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + $(this).text() + '&appid=a32ee3008dc5ad65e11f2b980a7a6054')
             .then(response => response.json())
             .then(data => {
               var lat = data[0].lat;
