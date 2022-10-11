@@ -2,7 +2,7 @@
 
 ![Screenshot of application](./assets/Images/screenshot.PNG)
 
-This is an application to keep a log of your schedule during a work day.
+This is an application to display the weather for cities.
 
 [Deployed Application](https://dcrowdev.github.io/challenge06-weather-dashboard/)
 
