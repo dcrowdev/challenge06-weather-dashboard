@@ -4,7 +4,7 @@
 
 This is an application to keep a log of your schedule during a work day.
 
-[Deployed Application](https://dcrowdev.github.io/challenge05-Work-Day-Scheduler/)
+[Deployed Application](https://dcrowdev.github.io/challenge06-weather-dashboard/)
 
 ## Description
 
