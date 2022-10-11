@@ -69,7 +69,7 @@ $(document).ready(function () {
                   var spanTempEl = $('<span>Temp: ' + temp + '°F</span>');
                   var spanWindEl = $('<span>Wind: ' + wind + 'MPH</span>');
                   var spanHumidityEl = $('<span>Humidity: ' + humidity + '%</span>');
-                  $('#five-day-container').append(cardDiv.append(div2.append(cityHeader.append(iconEl.attr('src', "http://openweathermap.org/img/wn/" + icon + ".png")))));
+                  $('#five-day-container').append(cardDiv.append(div2.append(cityHeader.append(iconEl.attr('src', "https://openweathermap.org/img/wn/" + icon + ".png")))));
                   cardDiv.append(spanTempEl);
                   cardDiv.append(spanWindEl);
                   cardDiv.append(spanHumidityEl);
@@ -104,7 +104,7 @@ $(document).ready(function () {
             $('#temp').text(temp);
             $('#wind').text(wind);
             $('#humidity').text(humidity);
-            $('#icon').attr('src', "http://openweathermap.org/img/wn/" + icon + ".png");
+            $('#icon').attr('src', "https://openweathermap.org/img/wn/" + icon + ".png");
             fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&units=imperial&appid=a32ee3008dc5ad65e11f2b980a7a6054')
               .then(response => response.json())
               .then(data => {
