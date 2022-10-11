@@ -142,4 +142,96 @@ $(document).ready(function () {
         $('.day-containers').remove()
       });
   })
+  $('#clear-search').click(function () {
+    localStorage.clear();
+    location.reload();
+  })
+
+  $(function () {
+    var highPopCities = [
+      "Austin",
+      "Albuquerque",
+      "Atlanta",
+      "Boston",
+      "Baltimore",
+      "Bakersfield",
+      "Chicago",
+      "Columbus",
+      "Charlotte",
+      "Dallas",
+      "Denver",
+      "Detroit",
+      "El Paso",
+      "Enterprise",
+      "Eugene",
+      "Fort Worth",
+      "Fresno",
+      "Fort Wayne",
+      "Greensboro",
+      "Gilbert",
+      "Glendale",
+      "Houston",
+      "Honolulu",
+      "Henderson",
+      "Indianapolis",
+      "Irvine",
+      "Irving",
+      "Jacksonville",
+      "Jersey City",
+      "Joliet",
+      "Kansas City",
+      "Knoxville",
+      "Kansas City",
+      "Los Angeles",
+      "Los Vegas",
+      "Long Beach",
+      "Memphis",
+      "Milwuakee",
+      "Mesa",
+      "New York City",
+      "Nashville",
+      "New Orleans",
+      "Oklahoma City",
+      "Omaha",
+      "Oakland",
+      "Pheonix",
+      "Philadelphia",
+      "Portland",
+      "Quincy",
+      "Queen Creek",
+      "Quartz Hill",
+      "Raleigh",
+      "Riverside",
+      "Reno",
+      "San Antonio",
+      "San Diego",
+      "San Jose",
+      "Tucson",
+      "Tulsa",
+      "Tampa",
+      "Upland",
+      "Union City",
+      "Utica",
+      "Virginia Beach",
+      "Vancouver",
+      "Visalia",
+      "Washington",
+      "Wichita",
+      "Winston-Salem",
+      "Xenia",
+      "Yonkers",
+      "Yakima",
+      "Yuma",
+      "Zionsville",
+      "Zion",
+      "Zanesville"
+    ];
+    $('#cityInput').autocomplete({
+      source: highPopCities,
+      scroll: true,
+    }).focus(function () {
+      $(this).autocomplete("search", "")
+    });
+  });
+
 });

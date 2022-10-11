@@ -15,7 +15,7 @@ header {
 }
 
 .five-day-forecast {
-    border: 1px solid black;
+    margin-top: 2%;
     height: 60%;
 }
 
@@ -46,7 +46,7 @@ button {
 }
 
 #five-day-header {
-    height: 20%;
+    height: 10%;
 }
 
 #five-day-container {
@@ -67,4 +67,8 @@ button {
 
 span {
     font-weight: bold;
+}
+
+#clear-search {
+    margin: 5% auto;
 }
