@@ -2,7 +2,7 @@
 
 ![Screenshot of application](./assets/Images/screenshot.PNG)
 
-This is an application to display the weather for cities.
+This is an application to display the weather for the searched city.
 
 [Deployed Application](https://dcrowdev.github.io/challenge06-weather-dashboard/)
 
